@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitea-http
+  labels:
+    app: gitea
+    app.kubernetes.io/name: gitea
+    app.kubernetes.io/instance: gitea
+    app.kubernetes.io/version: "1.15.3"
+    version: "1.15.3"
+  annotations:
+  namespace: gitea
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000
+  selector:
+    app.kubernetes.io/name: gitea
+    app.kubernetes.io/instance: gitea

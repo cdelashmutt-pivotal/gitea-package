@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitea-ssh
+  labels:
+    app: gitea
+    app.kubernetes.io/name: gitea
+    app.kubernetes.io/instance: gitea
+    app.kubernetes.io/version: "1.15.3"
+    version: "1.15.3"
+  annotations:
+    null
+  namespace: gitea
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - name: ssh
+    port: 22
+    targetPort: 22
+    protocol: TCP
+  selector:
+    app.kubernetes.io/name: gitea
+    app.kubernetes.io/instance: gitea
