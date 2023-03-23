@@ -69,9 +69,9 @@ spec:
             - name: GITEA_TEMP
               value: /tmp/gitea
             - name: GITEA_ADMIN_USERNAME
-              value: "gitea_admin"
+              value: #@ data.values.admin_username
             - name: GITEA_ADMIN_PASSWORD
-              value: "r8sA8CPHD9!bt6d"
+              value: #@ data.values.admin_password
           volumeMounts:
             - name: init
               mountPath: /usr/sbin

@@ -1,0 +1,10 @@
+#@data/values-schema
+
+#@schema/nullable
+extra_repository_config: ""
+
+ingress_domain: ""
+ingress_secret: ""
+
+admin_username: "gitea_admin"
+admin_password: ""
